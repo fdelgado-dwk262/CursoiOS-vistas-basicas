@@ -22,7 +22,8 @@ struct Vista18_listas_2: View {
         }
         // Falta lo del viernes
         // pruebas de git
-        // cambio sin commit
+        // cambio sin commi
+        // otra pureba de subida
     }
 }
 
