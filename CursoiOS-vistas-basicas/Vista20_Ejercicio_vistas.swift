@@ -55,17 +55,17 @@ struct Habit {
     var progress: Int = 0
     var goal: Int = 0
 
-//    var isCompleted: Bool {
-//        progress >= goal
-//    }
-//
-//    var progressText: String {
-//        "\(progress) / \(goal)"
-//    }
-//
-//    mutating func reset() {
-//        progress = 0
-//    }
+    //    var isCompleted: Bool {
+    //        progress >= goal
+    //    }
+    //
+    //    var progressText: String {
+    //        "\(progress) / \(goal)"
+    //    }
+    //
+    //    mutating func reset() {
+    //        progress = 0
+    //    }
 
 }
 
@@ -81,7 +81,7 @@ struct Vista20_Ejercicio_vistas: View {
     // se define en el state los elementos definidos
     // en el modelo de datos que hemos creadno con anterrioridad
     // en el struct con datos de base
-    
+
     // inicializamos los datos
     @State private var habit = Habit(
         name: "Beber Agua 💧",
@@ -103,6 +103,17 @@ struct Vista20_Ejercicio_vistas: View {
                 Text(habit.progressText)
                     .font(.title)
                     .foregroundColor(habit.isCompleted ? .green : .primary)
+
+                // modificación poner gotas en base  progres
+                if habit.goal > 0 {
+                    // pintar varias gotas
+                    HStack {
+                        ForEach(0..<habit.progress, id: \.self) { index in
+                            Text("💧")
+                        }
+                    }
+
+                }
 
                 if habit.isCompleted {
                     Text("¡Objetivo cumplido! 🎉")
