@@ -50,12 +50,53 @@ struct Vista21_Animaciones: View {
                     .onTapGesture {
                         animame.toggle()
                     }
+                RoundedRectangle(cornerRadius: animame ? 100: 50)
+                    .frame(width: 150, height: 150)
+                    .foregroundStyle(animame ? .red : .yellow)
+                    .scaleEffect(animame ? 2.5 : 1)
+                    .rotationEffect(animame ? .degrees(360): .zero)
+                    .opacity(animame ? 0.5: 1)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 1).delay(1)){
+                            animame.toggle()
+                        }
+                        
+                    }
+                
             }
-            
-            .frame(width: 300, height: 100)
             .background(.green)
             
+            Button("anima los dos elementos") {
+                // meter más lógica para poder hacer
+                // cosasa más complejas
+                withAnimation(.easeIn(duration: 1.0).delay(0.5)) {
+                    animame.toggle()
+                }
+            }
+            
+            RoundedRectangle(cornerRadius: animame ? 100: 50)
+                .modifier(RectanguloAnimable(animame: $animame))
+                .frame(width: 150, height: 150)
+                .onTapGesture {
+                    withAnimation(.easeIn(duration: 0.7)){
+                        animame.toggle()
+                    }
+                }
+            
         }
+    }
+}
+
+struct RectanguloAnimable: ViewModifier {
+    @Binding var animame : Bool
+    
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 150, height: 150)
+            .foregroundStyle(animame ? .red : .yellow)
+            .scaleEffect(animame ? 2.5 : 1)
+            .rotationEffect(animame ? .degrees(360): .zero)
+            .opacity(animame ? 0.5: 1)
     }
 }
 
