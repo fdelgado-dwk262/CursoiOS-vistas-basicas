@@ -67,6 +67,25 @@ struct ContentView: View {
                     NavigationLink(destination: Vista18_listas_2()) {
                         Text("ir a la Vista 18 .- Listas 2")
                     }
+                    NavigationLink(destination: Vista19_lista_profe_01()) {
+                        Text("ir a la Vista 19 .- Listas Profe")
+                    }
+
+                    NavigationLink(destination: Vista19_lista_profe_02()) {
+                        Text("ir a la Vista 19 .- Listas Profe II")
+                    }
+                    NavigationLink(destination: Vista20_Ejercicio_vistas()) {
+                        Text("ir a la Vista 20 .- Ejercicio")
+                    }
+                    NavigationLink(destination: Vista20_ExtensionesVistas()) {
+                        Text("ir a la Vista 20 .- ExtensionesVistas")
+                    }
+                    NavigationLink(destination: Vista21_Animaciones()) {
+                        Text("ir a la Vista 21 .- Animaciones")
+                    }
+
+
+
                 }
             }
         }
