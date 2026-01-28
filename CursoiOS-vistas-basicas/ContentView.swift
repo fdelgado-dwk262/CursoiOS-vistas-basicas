@@ -83,8 +83,16 @@ struct ContentView: View {
                     NavigationLink(destination: Vista21_Animaciones()) {
                         Text("ir a la Vista 21 .- Animaciones")
                     }
-
-
+                    NavigationLink(destination: Vista22_GeometyReader()) {
+                        Text("ir a la Vista 22 .- Vista22_GeometyReader")
+                    }
+                    NavigationLink(destination: Vista23_Debugging()) {
+                        Text("ir a la Vista 23 .- Vista23_Debugging")
+                    }
+                    NavigationLink(destination: Vista24_ejercicioColorHEXtoRGB()) {
+                        Text("ir a la Vista 24 .- Vista24_ejercicioColorHEXtoRGB")
+                    }
+                    
 
                 }
             }
