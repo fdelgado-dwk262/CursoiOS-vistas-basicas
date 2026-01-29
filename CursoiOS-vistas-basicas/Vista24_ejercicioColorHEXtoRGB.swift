@@ -21,6 +21,8 @@ struct Vista24_ejercicioColorHEXtoRGB: View {
 
       
         VStack(alignment: .leading, spacing: 10) {
+            
+            // ejemplo de color
             Text("Conversores de GHex to RGB 🎨")
                 .foregroundColor(Color(red: 146/255, green: 39/255, blue: 143/255, opacity: 1.0)
 )
@@ -33,30 +35,38 @@ struct Vista24_ejercicioColorHEXtoRGB: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.decimalPad)
                 .font(.headline)
+            
                 .onChange(of: colorHex) { HexOld, HexNew in
                     let cadena = colorHex
-                    let pares = stride(from: 0, to: cadena.count, by: 2).map { i -> String in
-                        let inicio = cadena.index(cadena.startIndex, offsetBy: i)
-                        let fin = cadena.index(inicio, offsetBy: 2, limitedBy: cadena.endIndex) ?? cadena.endIndex
-                        return String(cadena[inicio..<fin])
-                    }
-
-                    print(pares) // Resultado: ["AB", "CD", "EF", "GH", "IJ"]
-                    print(pares.count)
-                    if pares.count == 6 {
-                        print("tenemos el color")
-                        print(pares[1])
+                    
+                    if cadena.count == 6 {
+                        print("cantidad de caracteres \(cadena.count)")
                         
-                    } else {
-                        print("faltan valores o nos hemops pasado")
-                    }
+                        let pares = stride(from: 0, to: cadena.count, by: 1).map { i -> String in
+                            let inicio = cadena.index(cadena.startIndex, offsetBy: i)
+                            let fin = cadena.index(inicio, offsetBy: 1, limitedBy: cadena.endIndex) ?? cadena.endIndex
+                            return String(cadena[inicio..<fin])
+                        }
 
+                        print(pares) // Resultado: ["AB", "CD", "EF", "GH", "IJ"]
+                        print(pares.count)
+                        if pares.count == 6 {
+                            print("tenemos el color")
+                            
+                            // ver como seguimnos
+                            for elemento in pares {
+                                print(elemento)
+                            }
+
+                            
+                            
+                        } else {
+                            print("faltan valores o nos hemops pasado")
+                        }
+                    } else {
+                        print("color no valido")
+                    }
                 }
-            
-            
-//                .onChange(of: celsius) { vieja, nueva in
-//                    convertirTemperatura()
-//                }
         }
 
         Image(systemName: "arrow.down.circle.fill")
