@@ -92,7 +92,15 @@ struct ContentView: View {
                     NavigationLink(destination: Vista24_ejercicioColorHEXtoRGB()) {
                         Text("ir a la Vista 24 .- Vista24_ejercicioColorHEXtoRGB")
                     }
-                    
+                    NavigationLink(destination: vista25_grid()) {
+                        Text("ir a la Vista 25 .- Grid")
+                    }
+                    NavigationLink(destination: Vista26_Lazy()) {
+                        Text("ir a la Vista 26 .- Vista Lazy")
+                    }
+                    NavigationLink(destination: Vista27_LazyHStack()) {
+                        Text("ir a la Vista 27 .- Vista LazyHStack")
+                    }
 
                 }
             }

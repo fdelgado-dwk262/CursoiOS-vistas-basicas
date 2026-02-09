@@ -22,7 +22,8 @@ struct vista25_grid: View {
                 horizontalSpacing: 20,
                 verticalSpacing: 10
             ) {
-                // encabezado
+                
+                // encabezado a modo de ejemplo
                 GridRow {
                     Text("producto").bold()
                     Text("precio").bold()
