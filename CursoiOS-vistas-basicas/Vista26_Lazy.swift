@@ -20,6 +20,7 @@ struct Vista26_Lazy: View {
         GridItem(.adaptive(minimum: 100), spacing: 10)
     ]
 
+    
     var body: some View {
         // hacemos el ejemplo con VGrid Vertical grid
         NavigationStack {
@@ -29,14 +30,30 @@ struct Vista26_Lazy: View {
                 LazyVGrid(columns: columnas, spacing: 10) {
                     ForEach(1...500, id: \.self) { i in
                         VStack {
-                            Image(systemName: "photo")
-                                .font(.largeTitle)
-                            Text("Foto \(i)")
+//                            Image(systemName: "photo")
+//                                .font(.largeTitle)
+                            // Text("Foto \(i)")
+                            AsyncImage(url: URL(string: "https://picsum.photos/200/300")) { image in
+                                image
+                                    .resizable()
+//                                    .scaledToFit()
+                                    .scaledToFill()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .onTapGesture {
+                                print(" pulsamos la foto \(i)")
+                                
+                            }
+//                            .frame(width: 140)
+
                         }
                         .frame(height: 100)
                         .frame(maxWidth: .infinity)
                         .background(.indigo.opacity(0.3))
                         .cornerRadius(10)
+
+
                         
                         // para realizar controles variados
                         // por ejemplo temas de memoria

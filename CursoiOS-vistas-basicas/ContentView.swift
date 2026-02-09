@@ -101,7 +101,9 @@ struct ContentView: View {
                     NavigationLink(destination: Vista27_LazyHStack()) {
                         Text("ir a la Vista 27 .- Vista LazyHStack")
                     }
-
+                    NavigationLink(destination: Vista28_LazyVStack_stickyHeader()) {
+                        Text("ir a la Vista 28 .- Vista LazyVStack_stikyHeader")
+                    }
                 }
             }
         }
